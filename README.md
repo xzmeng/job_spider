@@ -34,4 +34,9 @@ Scrapy依赖的Twisted在没有安装vc++开发工具的windows上使用默认�
 
 
 
+![screenshot1](https://github.com/xzmeng/job_spider/blob/master/screenshot/job1.png)
+
+![screenshot2](https://github.com/xzmeng/job_spider/blob/master/screenshot/job2.png)
+
+![screenshot3](https://github.com/xzmeng/job_spider/blob/master/screenshot/job3.png)
 
