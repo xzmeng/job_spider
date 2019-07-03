@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="{{ url_for('index') }}">Logo</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+    <form class="form-inline" action="{{ url_for('search') }}">
+      <select class="form-control mr-sm-2" name="type">
+        <option value="salary">查工资</option>
+        <option value="job">搜工作</option>
+        <option value="analysis">岗位需求分析</option>
+      </select>
+    <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+  </ul>
+
+</nav>
+
+
+<div class="container-fluid">
+  {% block content %}
+  {% endblock %}
+</div>
+
+</body>
+</html>

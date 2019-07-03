@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <div class="container" style="width:60%;">
+  <div class="jumbotron">
+    <h1>关于"{{ keyword }}"的职位:</h1>
+  </div>
+    <ul class="list-group list-group-flush">
+      {% for job in jobs %}
+        <li class="list-group-item">
+          <a href="{{ url_for('job_detail', id=job.get('_id')) }}">
+            {{ job.get('jobName') }}--{{ job.get('companyName') }} - {{ job.get('city') }} - {{ job.get('salary')[1] }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {{ pagination.info }}
+  {{ pagination.links }}
+  </div>
+
+{% endblock %}

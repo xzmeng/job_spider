@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container" style="max-width: 60%">
+<div class="jumbotron">
+    <h1>关于"{{ keyword }}"的职位的薪资分析:</h1>
+
+
+  </div>
+    <h2>工资分布情况：</h2>
+  <img src="{{ pie_url }}">
+    <h2>工资水平和工作经验的关系:</h2>
+    <img src="{{ line_url }}" alt="" width="700">
+  </div>
+
+{% endblock %}

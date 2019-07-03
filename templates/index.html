@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container" style="max-width: 60%">
+    <div class="jumbotron">
+      <h1>搜工作</h1>
+    </div>
+    <br>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home">查工资</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu1">搜工作</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu2">岗位需求分析</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="home" class="container tab-pane active"><br>
+        <h3>查工资</h3>
+        <form class="form-inline" action="{{ url_for('search') }}">
+          <input type="hidden" name="type" value="salary">
+          <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="输入职位名称">
+          <button class="btn btn-success" type="submit">搜索</button>
+        </form>
+      </div>
+      <div id="menu1" class="container tab-pane fade"><br>
+        <h3>搜工作</h3>
+
+        <form class="form-inline" action="{{ url_for('search') }}">
+          <input type="hidden" name="type" value="job">
+          <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="输入职位名称">
+          <button class="btn btn-success" type="submit">搜索</button>
+        </form>
+      </div>
+      <div id="menu2" class="container tab-pane fade"><br>
+        <h3>岗位需求分析</h3>
+
+        <form class="form-inline" action="{{ url_for('search') }}">
+          <input type="hidden" name="type" value="analysis">
+          <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="输入职位名称">
+          <button class="btn btn-success" type="submit">搜索</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container" style="max-width: 60%">
+  <div class="jumbotron">
+    <h1>{{ job.get('jobName') }}--{{ job.get('companyName') }}</h1>
+  </div>
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <th class="w-25">职位名称</th>
+        <td>{{ job.get('jobName') }}</td>
+      </tr>
+      <tr>
+        <th>职位分类</th>
+        <td>{{ job.get('jobType') }}</td>
+      </tr>
+      <tr>
+        <th>工作类型</th>
+        <td>{{ job.get('emplType') }}</td>
+      </tr>
+      <tr>
+        <th>学历要求</th>
+        <td>{{ job.get('eduLevel') }}</td>
+      </tr>
+      <tr>
+        <th>公司名称</th>
+        <td>{{ job.get('companyName') }}</td>
+      </tr>
+      <tr>
+        <th>所在城市</th>
+        <td>{{ job.get('city') }}</td>
+      </tr>
+      <tr>
+        <th>薪水范围</th>
+        <td>{{ job.get('salary')[0] }}~{{ job.get('salary')[1] }}</td>
+      </tr>
+      <tr>
+        <th>工作经验</th>
+        <td>{{ job.get('workingExp')[0] }}~{{ job.get('workingExp')[1] }}</td>
+
+      </tr>
+      <tr>
+        <th>需要技能</th>
+        <td>{{ job.get('extractSkillTag') }}</td>
+      </tr>
+      <tr>
+        <th>公司福利</th>
+        <td>{{ job.get('welfare') }}</td>
+      </tr>
+      <tr>
+        <th>职位链接</th>
+        <td><a href="{{ job.get('positionUrl') }}">点击这里</a></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+{% endblock %}
